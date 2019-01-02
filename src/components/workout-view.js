@@ -8,7 +8,7 @@ export class Workouts extends React.Component {
         const workouts = this.props.workoutList;
         const listOfWorkouts = workouts.map((workout, index) => {
             return (
-                <Workout {...workout} key={index}/>
+                <Workout {...workout} key={index} id={index}/>
             )}
         );
 
