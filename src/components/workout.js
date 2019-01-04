@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Exercise from './exercises'
+import moment from 'moment';
+import { deleteWorkoutData } from '../actions/protected-data';
 
 export class Workout extends React.Component {
 
@@ -14,13 +16,21 @@ export class Workout extends React.Component {
             )}
         );
 
+        const deleteWorkout = () => {
+            return this.props
+                .dispatch(deleteWorkoutData(this.props._id))
+        };
+
+        const newFormattedDate = moment(this.props.date).format('LL');
+
          return(
-             <div className="workout">
-                 <span className="workout-name">{this.props.name}</span>
-                 <span className="workout-date">{this.props.date}</span>
+             <div className="workout" id={this.props.id}>
+                 <h3 className="workout-name">{this.props.name}</h3>
+                 <span className="workout-date">{newFormattedDate}</span>
                  <div className="exercises">
                      {listOfExercises}
                  </div>
+                 <button type="button" onClick={deleteWorkout}>Delete Workout</button>
              </div>
 
          )

@@ -3,10 +3,16 @@ import { withRouter } from 'react-router-dom';
 
 export class Exercise extends React.Component {
      render() {
-         console.log(this.props);
          return(
-            <div className="exercise">
-                 <span className="workout-name">{this.props.name}</span>
+            <div className="exercises">
+                <ul className="exercise-list">
+                    <li className="exercise-name">{this.props.name}</li>
+                    <ul className="exercise-info">
+                        <li className="reps">Reps : {this.props.reps}</li>
+                        <li className="sets">Sets : {this.props.sets}</li>
+                        <li className="weight">Weight : {this.props.weight}</li>
+                    </ul>
+                </ul>
             </div>
          )
      }

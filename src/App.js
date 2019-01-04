@@ -5,8 +5,9 @@ import './App.css';
 
 import NavBar from './components/nav-bar';
 import FrontPage from './components/FrontPage';
-import RegisterForm from './components/registration-page';
+import RegistrationPage from './components/registration-page';
 import Dashboard from './components/dashboard';
+import CreateWorkoutPage from './components/create-workout-page';
 import {refreshAuthToken} from './actions/auth';
 
 class App extends Component {
@@ -43,7 +44,8 @@ class App extends Component {
             <NavBar/>
             <Route exact path="/" component={FrontPage} />
             <Route exact path="/dashboard" component={Dashboard}/>
-            <Route exact path="/register" component={RegisterForm}/>
+            <Route exact path="/register" component={RegistrationPage}/>
+            <Route exact path="/create-workout" component={CreateWorkoutPage}/>
         </div>
     );
   }

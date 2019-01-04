@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Workout from './workout'
+import '../css/workout-view.css';
 
 export class Workouts extends React.Component {
 
