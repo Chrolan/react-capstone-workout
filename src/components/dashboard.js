@@ -11,6 +11,7 @@ export class Dashboard extends React.Component {
     }
 
     render() {
+
         return (
             <div className="dashboard">
                 <div className="dashboard-protected-data">

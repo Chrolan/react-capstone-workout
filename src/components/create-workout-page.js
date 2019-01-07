@@ -20,6 +20,7 @@ export function CreateWorkoutPage(props) {
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
+
 });
 
 export default connect(mapStateToProps)(CreateWorkoutPage);

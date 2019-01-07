@@ -1,8 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Exercise from './exercises'
+import Exercise from './exercises';
 import moment from 'moment';
-import { deleteWorkoutData } from '../actions/protected-data';
+import {deleteWorkoutData,  fetchWorkoutData} from '../actions/protected-data';
+import { Link} from 'react-router-dom';
+import { withRouter } from "react-router";
 
 export class Workout extends React.Component {
 
@@ -17,9 +19,13 @@ export class Workout extends React.Component {
         );
 
         const deleteWorkout = () => {
-            return this.props
+             return this.props
                 .dispatch(deleteWorkoutData(this.props._id))
+                 .then(() =>{
+                     this.props.dispatch(fetchWorkoutData())
+                 });
         };
+
 
         const newFormattedDate = moment(this.props.date).format('LL');
 
@@ -31,6 +37,7 @@ export class Workout extends React.Component {
                      {listOfExercises}
                  </div>
                  <button type="button" onClick={deleteWorkout}>Delete Workout</button>
+                 <Link to={`/edit-workout/${this.props._id}`}><button type="button">Edit Workout</button></Link>
              </div>
 
          )
@@ -45,4 +52,4 @@ const mapStateToProps = state => {
 };
 
 
-export default connect(mapStateToProps)(Workout);
+export default withRouter(connect(mapStateToProps)(Workout));

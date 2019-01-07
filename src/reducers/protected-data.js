@@ -1,6 +1,8 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
     FETCH_PROTECTED_DATA_ERROR,
+    FETCH_SINGLE_PROTECTED_DATA_SUCCESS,
+    FETCH_SINGLE_PROTECTED_DATA_ERROR,
     CREATE_PROTECTED_DATA_SUCCESS,
     CREATE_PROTECTED_DATA_ERROR,
     DELETE_PROTECTED_DATA_SUCCESS,
@@ -22,24 +24,36 @@ export default function reducer(state = initialState, action) {
             error: null
         });
     }
-    if (action.type === FETCH_PROTECTED_DATA_ERROR) {
+    else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });
     }
-    if (action.type === CREATE_PROTECTED_DATA_SUCCESS) {
+    else if (action.type === FETCH_SINGLE_PROTECTED_DATA_SUCCESS) {
+        return Object.assign({}, state, {
+            loading: false,
+            currentWorkout: action.workouts,
+            error: null
+        });
+    }
+    else if (action.type === FETCH_SINGLE_PROTECTED_DATA_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error
+        });
+    }
+    else if (action.type === CREATE_PROTECTED_DATA_SUCCESS) {
         return Object.assign({}, state, {
             loading: false,
             workouts: [...action.workouts],
             error: null
         });
     }
-    if (action.type === CREATE_PROTECTED_DATA_ERROR) {
+    else if (action.type === CREATE_PROTECTED_DATA_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });
     }
-    if (action.type === DELETE_PROTECTED_DATA_SUCCESS) {
+    else if (action.type === DELETE_PROTECTED_DATA_SUCCESS) {
         return Object.assign({}, state, {
             loading: false,
             workouts: [...action.workouts],

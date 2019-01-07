@@ -1,22 +1,23 @@
-import React from 'react';
-import Input from './input';
-import {required, nonEmpty, isTrimmed} from '../validators';
-import {Field, FieldArray, reduxForm, focus} from 'redux-form';
+import React from 'react'
+import {Field, FieldArray, focus, reduxForm} from 'redux-form'
+import {editWorkoutData} from "../actions/protected-data";
 import {Redirect} from 'react-router-dom';
-import {createWorkoutData} from "../actions/protected-data";
+import {isTrimmed, nonEmpty, required} from "../validators";
+import Input from "./input";
+import {connect} from "react-redux";
 
-export class CreateWorkoutForm extends React.Component {
+export class EditWorkoutForm extends React.Component {
 
     onSubmit(values) {
+        const _id = this.props.editingWorkout._id;
         const {name , date, exercises} = values;
-        const workout = {name , date, exercises};
+        const workout = {name , date, exercises, _id};
         return this.props
-            .dispatch(createWorkoutData(workout))
-            .then(()=> {
-              return  <Redirect to="/" push/>
+            .dispatch(editWorkoutData(workout))
+            .then(()=>{
+                return <Redirect to="/" push />
             })
     }
-
 
     render() {
 
@@ -62,7 +63,7 @@ export class CreateWorkoutForm extends React.Component {
 
         return (
             <form
-                className="workout-form"
+                className="edit-workout-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -71,6 +72,7 @@ export class CreateWorkoutForm extends React.Component {
                     type="text"
                     name="name"
                     label="Workout Name"
+                    value={this.props.editingWorkout.name}
                     validate={[required, nonEmpty, isTrimmed]}
                 />
                 <Field
@@ -87,12 +89,19 @@ export class CreateWorkoutForm extends React.Component {
                     Create!
                 </button>
             </form>
-        );
+        )
     }
 }
 
-export default reduxForm({
-    form: 'workoutCreator',
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null,
+    editingWorkout: state.workouts.currentWorkout,
+});
+
+const EditWorkoutPage = reduxForm({
+    form: 'editWorkout',
     onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('workoutCreator', Object.keys(errors)[0]))
-})(CreateWorkoutForm);
+        dispatch(focus('editWorkout', Object.keys(errors)[0]))
+})(EditWorkoutForm);
+
+export default connect(mapStateToProps)(EditWorkoutPage);

@@ -6,7 +6,7 @@ export class Exercise extends React.Component {
          return(
             <div className="exercises">
                 <ul className="exercise-list">
-                    <li className="exercise-name">{this.props.name}</li>
+                    <li className="exercise-name">Exercise: {this.props.name}</li>
                     <ul className="exercise-info">
                         <li className="reps">Reps : {this.props.reps}</li>
                         <li className="sets">Sets : {this.props.sets}</li>

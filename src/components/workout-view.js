@@ -7,6 +7,7 @@ export class Workouts extends React.Component {
 
     render () {
         const workouts = this.props.workoutList;
+
         const listOfWorkouts = workouts.map((workout, index) => {
             return (
                 <Workout {...workout} key={index} id={index}/>
