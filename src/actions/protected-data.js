@@ -32,10 +32,16 @@ export const fetchWorkoutData = () => (dispatch, getState) => {
         });
 };
 
+export const CLEAR_SINGLE_PROTECTED_DATA_SUCCESS = 'CLEAR_SINGLE_PROTECTED_DATA_SUCCESS';
+export const clearSingleWorkoutDataSuccess = workout => ({
+    type: CLEAR_SINGLE_PROTECTED_DATA_SUCCESS,
+    workout
+});
+
 export const FETCH_SINGLE_PROTECTED_DATA_SUCCESS = 'FETCH_SINGLE_PROTECTED_DATA_SUCCESS';
-export const fetchSingleWorkoutDataSuccess = workouts => ({
+export const fetchSingleWorkoutDataSuccess = workout => ({
     type: FETCH_SINGLE_PROTECTED_DATA_SUCCESS,
-    workouts
+    workout
 });
 
 export const FETCH_SINGLE_PROTECTED_DATA_ERROR = 'FETCH_SINGLE_PROTECTED_DATA_ERROR';
@@ -45,6 +51,7 @@ export const fetchSingleWorkoutDataError = error => ({
 });
 
 export const fetchSingleWorkoutData = workout => (dispatch, getState) => {
+    dispatch(clearSingleWorkoutDataSuccess());
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/${workout}` , {
         method: 'GET',
@@ -126,6 +133,11 @@ export const deleteWorkoutData = workout => (dispatch, getState) => {
         });
 };
 
+export const EDIT_PROTECTED_DATA_CLEAR = 'EDIT_PROTECTED_DATA_CLEAR';
+export const editWorkoutDataClear = () => ({
+    type: EDIT_PROTECTED_DATA_CLEAR
+});
+
 export const EDIT_PROTECTED_DATA_SUCCESS = 'EDIT_PROTECTED_DATA_SUCCESS';
 export const editWorkoutDataSuccess = workout => ({
     type: EDIT_PROTECTED_DATA_SUCCESS,
@@ -139,6 +151,7 @@ export const editWorkoutDataError = error => ({
 });
 
 export const editWorkoutData = workout => (dispatch, getState) => {
+    dispatch(editWorkoutDataClear());
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/${workout._id}`, {
         method: 'PUT',

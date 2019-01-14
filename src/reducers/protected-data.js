@@ -1,6 +1,7 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
     FETCH_PROTECTED_DATA_ERROR,
+    CLEAR_SINGLE_PROTECTED_DATA_SUCCESS,
     FETCH_SINGLE_PROTECTED_DATA_SUCCESS,
     FETCH_SINGLE_PROTECTED_DATA_ERROR,
     CREATE_PROTECTED_DATA_SUCCESS,
@@ -29,10 +30,16 @@ export default function reducer(state = initialState, action) {
             error: action.error
         });
     }
+    else if (action.type === CLEAR_SINGLE_PROTECTED_DATA_SUCCESS) {
+        return Object.assign({}, state, {
+            currentWorkout: {},
+            error: null
+        });
+    }
     else if (action.type === FETCH_SINGLE_PROTECTED_DATA_SUCCESS) {
         return Object.assign({}, state, {
             loading: false,
-            currentWorkout: action.workouts,
+            currentWorkout: action.workout,
             error: null
         });
     }

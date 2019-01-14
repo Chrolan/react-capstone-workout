@@ -1,7 +1,7 @@
 import React from 'react'
 import {Field, FieldArray, focus, reduxForm} from 'redux-form'
 import {editWorkoutData} from "../actions/protected-data";
-import {Redirect} from 'react-router-dom';
+import {Redirect , withRouter} from 'react-router-dom';
 import {isTrimmed, nonEmpty, required} from "../validators";
 import Input from "./input";
 import {connect} from "react-redux";
@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 export class EditWorkoutForm extends React.Component {
 
     onSubmit(values) {
-        const _id = this.props.editingWorkout._id;
+        const _id = this.props.initialValues._id;
         const {name , date, exercises} = values;
         const workout = {name , date, exercises, _id};
         return this.props
@@ -72,7 +72,6 @@ export class EditWorkoutForm extends React.Component {
                     type="text"
                     name="name"
                     label="Workout Name"
-                    value={this.props.editingWorkout.name}
                     validate={[required, nonEmpty, isTrimmed]}
                 />
                 <Field
@@ -86,7 +85,7 @@ export class EditWorkoutForm extends React.Component {
                 <button
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
-                    Create!
+                    Save!
                 </button>
             </form>
         )
@@ -95,13 +94,13 @@ export class EditWorkoutForm extends React.Component {
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
-    editingWorkout: state.workouts.currentWorkout,
+    initialValues: state.workouts.currentWorkout,
 });
 
-const EditWorkoutPage = reduxForm({
+const initializeForm =  reduxForm({
     form: 'editWorkout',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('editWorkout', Object.keys(errors)[0]))
 })(EditWorkoutForm);
 
-export default connect(mapStateToProps)(EditWorkoutPage);
+export default withRouter(connect(mapStateToProps)(initializeForm));

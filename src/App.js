@@ -9,6 +9,8 @@ import Dashboard from './components/dashboard';
 import CreateWorkoutPage from './components/create-workout-page';
 import {refreshAuthToken} from './actions/auth';
 import EditWorkoutPage from "./components/edit-workout-page";
+import ConfirmationEditWorkoutPage from "./components/edit-confirmation";
+import DeleteConfirmationWorkoutPage from "./components/delete-confirmation";
 
 class App extends Component {
 
@@ -48,6 +50,8 @@ class App extends Component {
             <Route exact path="/register" component={RegistrationPage}/>
             <Route exact path="/create-workout" component={CreateWorkoutPage}/>
             <Route exact path="/edit-workout/:id" component={EditWorkoutPage}/>
+            <Route exact path="/edit-confirmation/:id" component={ConfirmationEditWorkoutPage}/>
+            <Route exact path="/delete-confirmation/:id" component={DeleteConfirmationWorkoutPage}/>
             </Switch>
         </div>
     );

@@ -3,17 +3,10 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import EditWorkoutForm from "./edit-workout";
 import { withRouter } from "react-router";
-import {fetchSingleWorkoutData} from "../actions/protected-data";
 
 export class EditWorkoutPage extends React.Component {
 
-    componentDidMount() {
-        this.props.dispatch(fetchSingleWorkoutData(this.props.match.params.id));
-    }
-
     render () {
-
-        console.log(this.props);
 
     if (this.props.loggedIn) {
         return (
@@ -29,8 +22,7 @@ export class EditWorkoutPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null,
-    editingWorkout: state.workouts.currentWorkout,
+    loggedIn: state.auth.currentUser !== null
 });
 
 export default withRouter(connect(mapStateToProps)(EditWorkoutPage));
