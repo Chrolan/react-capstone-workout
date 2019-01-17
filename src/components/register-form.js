@@ -5,8 +5,10 @@ import {login} from '../actions/auth';
 import {Redirect} from 'react-router-dom';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './input';
+import '../css/workout-view.css';
 const passwordLength = length({min: 10, max: 20});
 const matchesPassword = matches('password');
+
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {

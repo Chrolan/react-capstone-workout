@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import {withRouter} from "react-router";
 import {connect} from "react-redux";
 import {fetchSingleWorkoutData} from "../actions/protected-data";
+import '../css/workout-view.css';
 
 export class ConfirmationEditWorkoutPage extends React.Component {
 
@@ -10,14 +11,23 @@ export class ConfirmationEditWorkoutPage extends React.Component {
         this.props.dispatch(fetchSingleWorkoutData(this.props.match.params.id));
     }
 
+    editConfirmation () {
+            this.props.history.push(`/edit-workout/${this.props.match.params.id}`)
+         }
+
+     cancelEdit () {
+        this.props.history.push('/dashboard')
+     }
+
+
     render () {
 
     if (this.props.loggedIn) {
         return (
-        <div className="edit-workout">
+        <div className="edit-workout row">
             <h3>Confirm you want to Edit Workout</h3>
-            <Link to={`/edit-workout/${this.props._id}`}><button type="button">Confirm</button></Link>
-            <Link to={`/dashboard`}><button type="button">Cancel</button></Link>
+            <button className="submit-button col-6" onClick={()=> {this.editConfirmation()}}>Confirm</button>
+            <button className="submit-button col-6" onClick={()=> {this.cancelEdit()}}>Cancel</button>
         </div>
         );
     }

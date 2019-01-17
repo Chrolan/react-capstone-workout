@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import '../css/workout-view.css';
 
 import RegistrationForm from './register-form';
 

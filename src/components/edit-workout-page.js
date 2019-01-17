@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import EditWorkoutForm from "./edit-workout";
 import { withRouter } from "react-router";
+import '../css/workout-view.css';
 
 export class EditWorkoutPage extends React.Component {
 
@@ -12,7 +13,9 @@ export class EditWorkoutPage extends React.Component {
         return (
         <div className="edit-workout">
             <h2>Edit Your Workout!</h2>
-            <EditWorkoutForm />
+            <div className="edit-workout-container row">
+                <EditWorkoutForm />
+            </div>
         </div>
         );
     }

@@ -2,11 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Exercise from './exercises';
 import moment from 'moment';
-import {deleteWorkoutData, fetchSingleWorkoutData, fetchWorkoutData} from '../actions/protected-data';
-import { Link} from 'react-router-dom';
-import { withRouter } from "react-router";
+import { withRouter } from "react-router"
 
 export class Workout extends React.Component {
+
+    deleteWorkout () {
+            this.props.history.push(`/delete-confirmation/${this.props._id}`)
+         }
+
+
+     editWorkout () {
+            this.props.history.push(`/edit-confirmation/${this.props._id}`)
+         }
 
      render() {
          
@@ -21,16 +28,18 @@ export class Workout extends React.Component {
         const newFormattedDate = moment(this.props.date).format('LL');
 
          return(
-             <div className="workout" id={this.props.id}>
-                 <h3 className="workout-name">{this.props.name}</h3>
-                 <span className="workout-date">{newFormattedDate}</span>
-                 <div className="exercises">
-                     {listOfExercises}
+                 <div className="workout row" id={this.props.id}>
+                     <div className="workout col-12">
+                         <h3 className="workout-name">{this.props.name}</h3>
+                         <p className="workout-date">{newFormattedDate}</p>
+                             <div className="exercises">
+                                 <h4>Exercises</h4>
+                                 {listOfExercises}
+                             </div>
+                     </div>
+                     <button className="submit-button col-6" onClick={()=> this.editWorkout()}>Edit Workout</button>
+                     <button className="submit-button col-6" onClick={()=> this.deleteWorkout()}>Delete Workout</button>
                  </div>
-                 <Link to={`/delete-confirmation/${this.props._id}`}><button type="button">Delete Workout</button></Link>
-                 <Link to={`/edit-confirmation/${this.props._id}`}><button type="button">Edit Workout</button></Link>
-             </div>
-
          )
      }
 };

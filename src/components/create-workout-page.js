@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import CreateWorkoutForm from './create-workout-form'
+import '../css/workout-view.css';
 
 export function CreateWorkoutPage(props) {
 
@@ -9,7 +10,9 @@ export function CreateWorkoutPage(props) {
         return (
         <div className="create-workout">
             <h2>Create Your Workout!</h2>
-            <CreateWorkoutForm />
+            <div className="create-workout-form-container row">
+                <CreateWorkoutForm />
+            </div>
         </div>
         );
     }

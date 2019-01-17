@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import {withRouter} from "react-router";
 import {connect} from "react-redux";
 import {deleteWorkoutData, fetchSingleWorkoutData} from "../actions/protected-data";
+import '../css/workout-view.css';
 
 export class DeleteConfirmationWorkoutPage extends React.Component {
 
@@ -10,19 +11,27 @@ export class DeleteConfirmationWorkoutPage extends React.Component {
         this.props.dispatch(fetchSingleWorkoutData(this.props.match.params.id));
     }
 
+     cancelDelete () {
+        this.props.history.push('/dashboard')
+     }
+
+    deleteWorkout () {
+             this.props.dispatch(deleteWorkoutData(this.props.deletingWorkout._id))
+                 .then(()=> {
+                     this.props.history.push('/dashboard')
+                 })
+        };
+
     render () {
 
-    const deleteWorkout = () => {
-         return this.props
-            .dispatch(deleteWorkoutData(this.props.deletingWorkout._id));
-    };
+
 
     if (this.props.loggedIn) {
         return (
-        <div className="edit-workout">
+        <div className="edit-workout row">
             <h3>Confirm you want to Delete Workout</h3>
-            <Link to={`/dashboard`}><button type="button" onClick={deleteWorkout}>Confirm</button></Link>
-            <Link to={`/dashboard`}><button type="button">Cancel</button></Link>
+            <button className="submit-button col-6" onClick={()=> {this.deleteWorkout()}}>Confirm</button>
+            <button className="submit-button col-6" onClick={()=> {this.cancelDelete()}}>Cancel</button>
         </div>
         );
     }

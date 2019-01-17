@@ -1,12 +1,13 @@
 import React from 'react';
 import { shallow, configure } from 'enzyme';
-import App from './App';
 import Adapter from 'enzyme-adapter-react-16';
+import Dashboard from './dashboard'
+import store from '../store'
 
 configure({ adapter: new Adapter() });
 
-describe('<App />', function() {
+describe('<Dashboard />', function() {
   it('Should smoke test the App component', function() {
-    shallow(<App dispatch={jest.fn} />)
+    shallow(<Dashboard store={store} />)
   });
 });

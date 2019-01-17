@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import Workouts from './workout-view';
 import {fetchWorkoutData} from "../actions/protected-data";
+import '../css/workout-view.css';
 
 export class Dashboard extends React.Component {
 

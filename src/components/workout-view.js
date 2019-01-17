@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Workout from './workout'
 import '../css/workout-view.css';
+import {withRouter} from "react-router";
 
 export class Workouts extends React.Component {
 
@@ -27,4 +28,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(Workouts);
+export default withRouter(connect(mapStateToProps)(Workouts));

@@ -1,12 +1,13 @@
 import React from 'react';
 import { shallow, configure } from 'enzyme';
-import App from './App';
 import Adapter from 'enzyme-adapter-react-16';
+import store from '../store'
+import {EditWorkoutPage} from "./edit-workout-page";
 
 configure({ adapter: new Adapter() });
 
-describe('<App />', function() {
+describe('<EditWorkoutPage />', function() {
   it('Should smoke test the App component', function() {
-    shallow(<App dispatch={jest.fn} />)
+    shallow(<EditWorkoutPage store={store} />)
   });
 });
