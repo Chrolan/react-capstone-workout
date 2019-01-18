@@ -30,7 +30,7 @@ export class Workout extends React.Component {
          return(
                  <div className="workout row" id={this.props.id}>
                      <div className="workout col-12">
-                         <h3 className="workout-name">{this.props.name}</h3>
+                         <h3 className="workout-name"><b>Workout:</b>            {this.props.name}</h3>
                          <p className="workout-date">{newFormattedDate}</p>
                              <div className="exercises">
                                  <h4>Exercises</h4>

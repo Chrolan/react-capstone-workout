@@ -9,14 +9,19 @@ import '../css/workout-view.css';
 
 export class EditWorkoutForm extends React.Component {
 
+    shouldComponentUpdate(nextProps, nextState) {
+    return false;
+    }
+
     onSubmit(values) {
         const _id = this.props.initialValues._id;
         const {name , date, exercises} = values;
         const workout = {name , date, exercises, _id};
+        console.log(workout);
         return this.props
             .dispatch(editWorkoutData(workout))
             .then(()=>{
-                return <Redirect to="/" push />
+              this.props.history.push('/dashboard')
             })
     }
 
@@ -97,9 +102,8 @@ export class EditWorkoutForm extends React.Component {
                 <div className="row">
                     <button
                         className="submit-button col-6"
-                        type="submit"
-                        disabled={this.props.pristine || this.props.submitting}>
-                        Create!
+                        type="submit">
+                        Save!
                     </button>
                 </div>
             </form>
@@ -108,7 +112,6 @@ export class EditWorkoutForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null,
     initialValues: state.workouts.currentWorkout
 });
 

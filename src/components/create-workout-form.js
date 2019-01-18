@@ -18,6 +18,10 @@ export class CreateWorkoutForm extends React.Component {
             })
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+    return JSON.stringify(this.props) !== JSON.stringify(nextProps) || JSON.stringify(this.state) !== JSON.stringify(nextState);
+  }
+
     render() {
 
         const renderExerciseFields = (exercise, index, fields) => (
@@ -73,7 +77,7 @@ export class CreateWorkoutForm extends React.Component {
 
         return (
             <form
-                className="workout-form row"
+                className="edit-workout-form row"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
