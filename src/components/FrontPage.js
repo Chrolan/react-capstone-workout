@@ -9,16 +9,17 @@ import LoginForm from './login-form';
 export function FrontPage(props) {
     // If we are logged in redirect straight to the user's dashboard
     if (props.loggedIn) {
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/welcome" />;
     }
 
     return (
         <div className="home">
             <h2>Welcome to your work out App</h2>
-            <div className="login-container row">
+            <div className="login-container">
                 <LoginForm />
-                <h3>If you do not have an account, please <Link to="/register">Register</Link></h3>
-
+                <div className="row">
+                    <h4 className="col-6">If you do not have an account, please <Link to="/register">Register</Link></h4>
+                </div>
             </div>
         </div>
     );

@@ -10,7 +10,7 @@ export function RegistrationPage(props) {
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }
-    
+
     return (
         <div className="home row">
             <h2>Register for Jordi's Workout App</h2>

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Field, FieldArray, focus, reduxForm} from 'redux-form'
 import {editWorkoutData} from "../actions/protected-data";
-import {Redirect , withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {isTrimmed, nonEmpty, required} from "../validators";
 import Input from "./input";
 import {connect} from "react-redux";
