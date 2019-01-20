@@ -31,7 +31,7 @@ export class NavBar extends React.Component {
         return (
             <nav role="navigation" id="nav-bar" className="nav-bar">
                 <div className="nav-container row">
-                    <h1>Jordi's Workout App</h1>
+                    <h1>Your Workout App</h1>
                     <ul className="nav-bar-items">
                         {myDashboardButton}
                         {createWorkoutButton}

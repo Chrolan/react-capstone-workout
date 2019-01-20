@@ -11,7 +11,7 @@ import {refreshAuthToken} from './actions/auth';
 import EditWorkoutPage from "./components/edit-workout-page";
 import ConfirmationEditWorkoutPage from "./components/edit-confirmation";
 import DeleteConfirmationWorkoutPage from "./components/delete-confirmation";
-import {Welcome} from "./components/welcome-page";
+import LoginPage from "./components/login-page"
 
 class App extends Component {
 
@@ -47,7 +47,7 @@ class App extends Component {
             <NavBar/>
             <Switch>
             <Route exact path="/" component={FrontPage} />
-            <Route exact path="/welcome" component={Welcome}/>
+            <Route exact path="/login" component={LoginPage}/>
             <Route exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/register" component={RegistrationPage}/>
             <Route exact path="/create-workout" component={CreateWorkoutPage}/>

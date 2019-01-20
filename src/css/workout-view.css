@@ -29,15 +29,34 @@ form {
     text-align: center;
 }
 
+.home {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),url("https://www.malixmedia.com/wp-content/uploads/2016/02/635963662737113458-1646039698_gym.jpg");
+    background-size: cover;
+    color: white;
+    text-shadow: 0 1px 0 black;
+}
+
+.half-container {
+    width: 50%;
+}
+
 .form-error{
     background: yellow;
 }
+
+.message-container {
+    font-weight: bold;
+    text-align: center;
+}
 .submit-button {
-  margin-top: 10px ;
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-top: 5px ;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom: 5px;
   background-color: #FFEEAD;
-  border: 1px solid black;
   text-align: center;
   text-decoration: none;
   display: inline-block;

@@ -10,7 +10,7 @@ export class CreateWorkoutForm extends React.Component {
 
     onSubmit(values) {
         const {name , date, exercises} = values;
-        const workout = {name , date, exercises};
+        const workout = {name , date, exercises}
         return this.props
             .dispatch(createWorkoutData(workout))
             .then(()=> {
@@ -18,11 +18,10 @@ export class CreateWorkoutForm extends React.Component {
             })
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-    return JSON.stringify(this.props) !== JSON.stringify(nextProps) || JSON.stringify(this.state) !== JSON.stringify(nextState);
-  }
 
     render() {
+
+    console.log(this.props)
 
         const renderExerciseFields = (exercise, index, fields) => (
             <li key={index}>
@@ -33,7 +32,6 @@ export class CreateWorkoutForm extends React.Component {
                 name={`${exercise}.name`}
                 type="text"
                 component={Input}
-                validate={[required, nonEmpty, isTrimmed]}
                 label="Name"
               />
               <Field
@@ -52,7 +50,7 @@ export class CreateWorkoutForm extends React.Component {
                 name={`${exercise}.weight`}
                 type="number"
                 component={Input}
-                label="Weight"
+                label="Weight (lbs)"
                 />
                 <div className="row">
                     <button
@@ -68,10 +66,10 @@ export class CreateWorkoutForm extends React.Component {
 
         const renderExercises = ({ fields }) => (
           <ul>
+              {fields.map(renderExerciseFields)}
               <div className="row">
                 <button className="submit-button col-4" type="button" onClick={() => fields.push({})}>Add Exercise</button>
               </div>
-            {fields.map(renderExerciseFields)}
           </ul>
         );
 

@@ -9,10 +9,6 @@ import '../css/workout-view.css';
 
 export class EditWorkoutForm extends React.Component {
 
-    shouldComponentUpdate(nextProps, nextState) {
-    return false;
-    }
-
     onSubmit(values) {
         const _id = this.props.initialValues._id;
         const {name , date, exercises} = values;
@@ -36,7 +32,6 @@ export class EditWorkoutForm extends React.Component {
                 name={`${exercise}.name`}
                 type="text"
                 component={Input}
-                validate={[required, nonEmpty, isTrimmed]}
                 label="Name"
               />
               <Field
@@ -55,7 +50,7 @@ export class EditWorkoutForm extends React.Component {
                 name={`${exercise}.weight`}
                 type="number"
                 component={Input}
-                label="Weight"
+                label="Weight (lbs)"
                 />
                 <div className="row">
                     <button
@@ -71,10 +66,11 @@ export class EditWorkoutForm extends React.Component {
 
         const renderExercises = ({ fields }) => (
           <ul>
+              {fields.map(renderExerciseFields)}
               <div className="row">
                 <button className="submit-button col-4" type="button" onClick={() => fields.push({})}>Add Exercise</button>
               </div>
-            {fields.map(renderExerciseFields)}
+
           </ul>
         );
 
@@ -96,7 +92,6 @@ export class EditWorkoutForm extends React.Component {
                     type="date"
                     name="date"
                     label="Workout Date"
-                    validate={[required, nonEmpty, isTrimmed]}
                 />
                 <FieldArray name="exercises" component={renderExercises}/>
                 <div className="row">

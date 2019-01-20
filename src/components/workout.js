@@ -37,8 +37,12 @@ export class Workout extends React.Component {
                                  {listOfExercises}
                              </div>
                      </div>
-                     <button className="submit-button col-6" onClick={()=> this.editWorkout()}>Edit Workout</button>
-                     <button className="submit-button col-6" onClick={()=> this.deleteWorkout()}>Delete Workout</button>
+                     <div className="col-12">
+                        <button className="submit-button button-container" onClick={()=> this.editWorkout()}>Edit Workout</button>
+                     </div>
+                     <div className="col-12">
+                        <button className="submit-button button-container" onClick={()=> this.deleteWorkout()}>Delete Workout</button>
+                     </div>
                  </div>
          )
      }

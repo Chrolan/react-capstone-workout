@@ -11,7 +11,7 @@ export class Exercise extends React.Component {
                     <ul className="exercise-info">
                         <li className="reps"><b>Reps :</b> {this.props.reps}</li>
                         <li className="sets"><b>Sets : </b>{this.props.sets}</li>
-                        <li className="weight"><b>Weight : </b>{this.props.weight}</li>
+                        <li className="weight"><b>Weight (lbs) : </b>{this.props.weight}</li>
                     </ul>
                 </ul>
             </div>
