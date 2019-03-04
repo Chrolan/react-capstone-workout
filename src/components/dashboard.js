@@ -15,7 +15,7 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
-                <div className="dashboard-protected-data">
+                <div className="dashboard-protected-data row page">
                     <h2>My Workouts</h2>
                     <Workouts/>
                 </div>

@@ -11,12 +11,12 @@ export function LoginPage(props) {
     }
 
     return (
-        <div className="login">
-            <h2>Login to your workout app</h2>
-            <div>
+        <div className="login row page">
+            <div className="">
+                <h2>Login to continue</h2>
                 <LoginForm />
             </div>
-            <div className="row">
+            <div className="">
                 <div className="message-container">
                     <p>If you do not have an account, please <Link to="/register">Register</Link></p>
                 </div>

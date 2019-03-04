@@ -12,8 +12,8 @@ export class EditWorkoutPage extends React.Component {
     if (this.props.loggedIn) {
         return (
         <div className="edit-workout">
-            <h2>Edit Your Workout!</h2>
-            <div className="edit-workout-container row">
+            <div className="edit-workout-container row page">
+                <h2>Edit Your Workout</h2>
                 <EditWorkoutForm />
             </div>
         </div>

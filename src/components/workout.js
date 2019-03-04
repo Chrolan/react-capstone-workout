@@ -28,7 +28,7 @@ export class Workout extends React.Component {
         const newFormattedDate = moment(this.props.date).format('LL');
 
          return(
-                 <div className="workout row" id={this.props.id}>
+                 <div className="workout" id={this.props.id}>
                      <div className="workout col-12">
                          <h3 className="workout-name"><b>Workout:</b>            {this.props.name}</h3>
                          <p className="workout-date">{newFormattedDate}</p>

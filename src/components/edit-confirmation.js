@@ -24,7 +24,7 @@ export class ConfirmationEditWorkoutPage extends React.Component {
 
     if (this.props.loggedIn) {
         return (
-        <div className="edit-workout row">
+        <div className="edit-workout row page">
             <h3>Confirm you want to Edit Workout</h3>
             <button className="submit-button col-6" onClick={()=> {this.editConfirmation()}}>Confirm</button>
             <button className="submit-button col-6" onClick={()=> {this.cancelEdit()}}>Cancel</button>

@@ -11,7 +11,7 @@ export function RegistrationPage(props) {
     }
 
     return (
-        <div className="register">
+        <div className="register page">
             <h2>Register for the Workout App</h2>
             <div className="row">
             <RegistrationForm />

@@ -20,9 +20,6 @@ export class CreateWorkoutForm extends React.Component {
 
 
     render() {
-
-    console.log(this.props)
-
         const renderExerciseFields = (exercise, index, fields) => (
             <li key={index}>
                 <div>

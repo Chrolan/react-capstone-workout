@@ -3,8 +3,10 @@
     font-family: 'Noto Serif', serif;
 }
 
-.app {
-    background-color: #AAD8B0;
+body {
+    background-image: url("https://www.malixmedia.com/wp-content/uploads/2016/02/635963662737113458-1646039698_gym.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .row {
@@ -23,17 +25,15 @@
   clear: both;
 }
 
-.col-4,.col-6, .col-5, .col-8,.col-12 {
+.col-4,.col-6, .col-5, .col-3,.col-8,.col-12 {
   float: left;
   padding-left: 1.04166666%;
   padding-right: 1.04166666%;
 }
 
-.col-4, .col-6, .col-5, .col-8, .col-12 {
+.col-4, .col-6, .col-3, .col-5, .col-8, .col-12 {
   width: 100%;
 }
-
-
 
 @media only screen and (min-width: 650px) {
 
@@ -41,6 +41,9 @@
     width: 33.33333%;
   }
 
+  .col-3 {
+    width: 25%;
+  }
   .col-5 {
     width: 20%;
   }

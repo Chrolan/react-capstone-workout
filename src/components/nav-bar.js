@@ -15,23 +15,23 @@ export class NavBar extends React.Component {
         let logOutButton, myDashboardButton, createWorkoutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <li className="logout-button col-4" onClick={() => this.logOut()}><Link to="/" >Log out</Link></li>
+                <li className="logout-button col-3" onClick={() => this.logOut()}><Link to="/" >Log out</Link></li>
             );
         }
         if (this.props.loggedIn) {
             myDashboardButton = (
-                <li className="workout-page-button col-4"><Link to="/dashboard">Dashboard</Link></li>
+                <li className="workout-page-button col-3"><Link to="/dashboard">Dashboard</Link></li>
             )
         }
         if (this.props.loggedIn) {
             createWorkoutButton = (
-                <li className="create-workout-button col-4"><Link to="/create-workout">Create Workout</Link></li>
+                <li className="create-workout-button col-3"><Link to="/create-workout">Create Workout</Link></li>
             )
         }
         return (
             <nav role="navigation" id="nav-bar" className="nav-bar">
                 <div className="nav-container row">
-                    <h1>Your Workout App</h1>
+                    <h1 className="col-3">Workout Tracker</h1>
                     <ul className="nav-bar-items">
                         {myDashboardButton}
                         {createWorkoutButton}
