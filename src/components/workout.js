@@ -29,7 +29,10 @@ export class Workout extends React.Component {
 
          return(
                  <div className="workout" id={this.props.id}>
-                     <div className="workout col-12">
+                     <div className="empty col-3">
+                        &nbsp;
+                    </div>
+                     <div className="workout col-6">
                          <h3 className="workout-name"><b>Workout:</b>            {this.props.name}</h3>
                          <p className="workout-date">{newFormattedDate}</p>
                              <div className="exercises">
@@ -37,11 +40,21 @@ export class Workout extends React.Component {
                                  {listOfExercises}
                              </div>
                      </div>
-                     <div className="col-12">
-                        <button className="submit-button button-container" onClick={()=> this.editWorkout()}>Edit Workout</button>
+                     <div className="buttons row">
+                         <div className="empty col-3">
+                            &nbsp;
+                        </div>
+                         <div className="col-6">
+                            <button className="submit-button button-container" onClick={()=> this.editWorkout()}>Edit Workout</button>
+                         </div>
                      </div>
-                     <div className="col-12">
-                        <button className="submit-button button-container" onClick={()=> this.deleteWorkout()}>Delete Workout</button>
+                     <div className="buttons row">
+                         <div className="empty col-3">
+                            &nbsp;
+                        </div>
+                         <div className="col-6">
+                            <button className="submit-button button-container" onClick={()=> this.deleteWorkout()}>Delete Workout</button>
+                         </div>
                      </div>
                  </div>
          )
