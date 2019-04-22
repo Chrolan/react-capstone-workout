@@ -28,31 +28,15 @@ export class Workout extends React.Component {
         const newFormattedDate = moment(this.props.date).format('LL');
 
          return(
-                 <div className="workout" id={this.props.id}>
+                 <div className="workout-card flex-item" id={this.props.id}>
                      <div className="">
-                        &nbsp;
-                    </div>
-                     <div className="">
-                         <h3 className=""><b>Workout:</b>            {this.props.name}</h3>
+                         <h3 className=""><b>Workout:</b>{this.props.name}</h3>
                          <p className="">{newFormattedDate}</p>
-                             <div className="">
                                  <h4>Exercises</h4>
                                  {listOfExercises}
-                             </div>
                      </div>
-                     <div className="">
-                         <div className="">
-                            <button className="" onClick={()=> this.editWorkout()}>Edit Workout</button>
-                         </div>
-                     </div>
-                     <div className=" ">
-                         <div className=" ">
-                            &nbsp;
-                        </div>
-                         <div className="">
-                            <button className="" onClick={()=> this.deleteWorkout()}>Delete Workout</button>
-                         </div>
-                     </div>
+                      <button className="" onClick={()=> this.editWorkout()}>Edit Workout</button>
+                      <button className="" onClick={()=> this.deleteWorkout()}>Delete Workout</button>
                  </div>
          )
      }
