@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import './Login.css';
 import LoginForm from "./LoginForm";
 
@@ -11,15 +11,10 @@ export function LoginPage(props) {
     }
 
     return (
-        <div className="login row page">
-            <div className="">
-                <h2>Login to continue</h2>
+        <div className="login-page">
+            <div className="form">
+                <h2>LOGIN</h2>
                 <LoginForm />
-            </div>
-            <div className="">
-                <div className="message-container">
-                    <p>If you do not have an account, please <Link to="/register">Register</Link></p>
-                </div>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../../actions/Users';
 import {login} from '../../actions/Auth';
-import {Redirect} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom'
 import {required, nonEmpty, matches, length, isTrimmed} from '../../Validators';
 import Input from '../input';
 import './Registration.css'
@@ -23,7 +23,7 @@ export class RegistrationForm extends React.Component {
     render() {
         return (
             <form
-                className="login-form"
+                className="register-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
@@ -73,6 +73,7 @@ export class RegistrationForm extends React.Component {
                     disabled={this.props.pristine || this.props.submitting}>
                     Register
                 </button>
+                <p>If you already an account, please <Link to="/login">Login</Link> page.</p>
             </form>
         );
     }

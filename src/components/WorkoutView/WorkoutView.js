@@ -16,7 +16,7 @@ export class Workouts extends React.Component {
         );
 
         return(
-            <div className="workouts">
+            <div className="workouts row">
                 {listOfWorkouts}
             </div>
     )

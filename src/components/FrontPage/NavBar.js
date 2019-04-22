@@ -12,33 +12,44 @@ export class NavBar extends React.Component {
     }
 
     render() {
-        let logOutButton, myDashboardButton, createWorkoutButton;
+        let logOutButton, myDashboardButton, createWorkoutButton, loginButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <li className="logout-button col-3" onClick={() => this.logOut()}><Link to="/" >Log out</Link></li>
+                <li className="" onClick={() => this.logOut()}><Link to="/" >Log out</Link></li>
             );
         }
         if (this.props.loggedIn) {
             myDashboardButton = (
-                <li className="workout-page-button col-3"><Link to="/dashboard">Dashboard</Link></li>
+                <li className=""><Link to="/dashboard">Dashboard</Link></li>
             )
         }
         if (this.props.loggedIn) {
             createWorkoutButton = (
-                <li className="create-workout-button col-3"><Link to="/create-workout">Create Workout</Link></li>
+                <li className=""><Link to="/create-workout">Create Workout</Link></li>
+            )
+        }
+        if (!this.props.loggedIn) {
+            loginButton = (
+              <li className=""><Link to="/login">Log In</Link></li>
             )
         }
         return (
-            <nav role="navigation" id="nav-bar" className="nav-bar">
-                <div className="nav-container row">
-                    <h1 className={"title " + (this.props.loggedIn ? 'col-3' : 'col-12')}>Workout Tracker</h1>
-                    <ul className="nav-bar-items">
+          <header>
+              <div className="header">
+                <div className="">
+                    <h1>Workout Tracker</h1>
+                </div>
+
+                <nav className="">
+                    <ul className="">
                         {myDashboardButton}
                         {createWorkoutButton}
                         {logOutButton}
+                        {loginButton}
                     </ul>
-                </div>
-            </nav>
+                </nav>
+              </div>
+          </header>
         );
     }
 }

@@ -4,6 +4,7 @@ import Input from '../input';
 import {login} from '../../actions/Auth';
 import {required, nonEmpty} from '../../Validators';
 import './Login.css'
+import { Link } from 'react-router-dom'
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
@@ -45,6 +46,7 @@ export class LoginForm extends React.Component {
                 <button className="submit-button button-container" disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
+                <p className="message">If you do not have an account, please <Link to="/register">Register</Link></p>
             </form>
         );
     }

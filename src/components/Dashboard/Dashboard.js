@@ -14,11 +14,9 @@ export class Dashboard extends React.Component {
     render() {
 
         return (
-            <div className="dashboard">
-                <div className="dashboard-protected-data row page">
-                    <h2>My Workouts</h2>
+            <div className="dashboard container">
+                <h2>My Workouts</h2>
                     <Workouts/>
-                </div>
             </div>
         );
     }

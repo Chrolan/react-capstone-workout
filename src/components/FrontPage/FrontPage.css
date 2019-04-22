@@ -1,0 +1,82 @@
+header{
+	min-height: 65px;
+    color: #000000;
+    background-color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header ul li a{
+	padding: 20px;
+	font-size: 18px;
+    font-weight: 500;
+}
+
+header nav{
+	flex: 1;
+	margin-left: 30px;
+}
+
+header nav ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+    justify-content: flex-end;
+}
+
+
+header nav a{
+	text-decoration: none;
+	background: transparent;
+	padding: 6px 10px;
+	transition: 0.5s;
+}
+
+header nav a:hover{
+	color:#fff;
+	cursor: pointer;
+	background: #171717;
+	transition: 0.2s;
+}
+
+li.current:hover{
+	border-bottom: 0px;
+}
+
+h2 {
+    margin-top: .5em;
+    margin-bottom: .25em;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+	width: 70%;
+    margin: 0 auto;
+}
+
+
+
+.front-page > .container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 50%;
+}
+
+#title {
+    background: url(https://images.pexels.com/photos/1092878/pexels-photo-1092878.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center fixed;
+    background-size: cover;
+	min-height: 500px;
+	display: flex;
+	color: white;
+	justify-content: center;
+	align-items: center;
+    flex-basis: 100%;
+}
+
+#title > p {
+    font-weight: 800;
+	font-size: 45px;
+    text-shadow: 3px 3px 5px rgba(0,0,0, 0.5);
+}
