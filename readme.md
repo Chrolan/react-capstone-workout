@@ -17,18 +17,18 @@
 
 <p>First register or log into system via main page</p>
 
-![](src/images/Register-login.png)
+![](src/assets/RegisterLogin.png)
 
 <p>Next you will be able to create a workout</p>
 
-![](src/images/Create-Workout.png)
+![](src/assets/CreateWorkout.png)
 
 <p>To be able to view all your workouts, you can visit the dashboard</p>
 
-![](src/images/Dashboard.png)
+![](src/assets/Dashboard.png)
 
 <p>From the dashboard you can edit or delete workouts as you please</p>
 
-![](src/images/Edit%20and%20Delete.png)
+![](src/assets/Edit%20and%20Delete.png)
 
 <p>Node Based API github can be found <a href="https://github.com/Chrolan/server-react-capstone-workout-app">here</a></p>

@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Switch, Route, withRouter} from 'react-router-dom';
 import './App.css';
-import NavBar from './components/nav-bar';
-import FrontPage from './components/FrontPage';
-import RegistrationPage from './components/registration-page';
-import Dashboard from './components/dashboard';
-import CreateWorkoutPage from './components/create-workout-page';
-import {refreshAuthToken} from './actions/auth';
-import EditWorkoutPage from "./components/edit-workout-page";
-import ConfirmationEditWorkoutPage from "./components/edit-confirmation";
-import DeleteConfirmationWorkoutPage from "./components/delete-confirmation";
-import LoginPage from "./components/login-page"
+import NavBar from './components/FrontPage/NavBar';
+import FrontPage from './components/FrontPage/FrontPage';
+import RegistrationPage from './components/Registration/RegistrationPage';
+import Dashboard from './components/Dashboard/Dashboard';
+import CreateWorkoutPage from './components/CreateWorkout/CreateWorkoutPage';
+import {refreshAuthToken} from './actions/Auth';
+import EditWorkoutPage from "./components/EditWorkout/EditWorkoutPage";
+import ConfirmationEditWorkoutPage from "./components/EditWorkout/EditConfirmation";
+import DeleteConfirmationWorkoutPage from "./components/DeleteConfirmation/DeleteConfirmation";
+import LoginPage from "./components/Login/LoginPage"
 
 class App extends Component {
 
