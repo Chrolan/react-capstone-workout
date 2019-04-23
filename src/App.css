@@ -13,12 +13,16 @@
 body {
     font-weight: 300;
     box-sizing: border-box;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #2AABE4;
 }
 
 
 .wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .container {
@@ -27,18 +31,4 @@ body {
     flex-grow: 1;
     margin: 0 auto;
     max-width: 70%;
-}
-
-.row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: space-around;
-}
-
-.flex-item {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
 }

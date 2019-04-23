@@ -1,0 +1,100 @@
+.create-page {
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form-create {
+  z-index: 1;
+  background: #FFFFFF;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form-create input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form-input {
+    text-align: left;
+    font-weight: 500;
+}
+
+.form-create button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #4266af;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.card-item {
+    display: flex;
+    padding: .4rem;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: .75rem;
+}
+
+.button-container {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.add-button:hover,.add-button:active,.add-button:focus, .remove-button:hover, .remove-button:active, .remove-button:focus, .submit-button:hover,.submit-button:active,.submit-button:focus {
+  color: #000000;
+  font-weight: 600;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.remove-button:hover, .remove-button:active, .remove-button:focus {
+  background: #ff2620;
+}
+
+.add-button:hover,.add-button:active,.add-button:focus {
+  background: #43A047;
+}
+
+.submit-button:hover,.submit-button:active,.submit-button:focus {
+  background: #43A047;
+}
+
+.create-header,.create-button {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+

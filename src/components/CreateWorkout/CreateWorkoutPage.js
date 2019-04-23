@@ -8,10 +8,11 @@ export function CreateWorkoutPage(props) {
 
     if (props.loggedIn) {
         return (
-        <div className="create-workout">
-            <div className="row page">
-                <h2>Create Your Workout!</h2>
-                <CreateWorkoutForm />
+        <div className="container">
+            <div className="create-page">
+                <div className="form-create">
+                    <CreateWorkoutForm />
+                </div>
             </div>
         </div>
         );

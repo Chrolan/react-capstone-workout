@@ -24,62 +24,67 @@ export class EditWorkoutForm extends React.Component {
     render() {
 
         const renderExerciseFields = (exercise, index, fields) => (
-            <li key={index}>
-                <div>
-                  <h3>Exercise #{index + 1}</h3>
-                </div>
-              <Field
-                name={`${exercise}.name`}
-                type="text"
-                component={Input}
-                label="Name"
-              />
-              <Field
-                name={`${exercise}.sets`}
-                type="number"
-                component={Input}
-                label="Sets"
-              />
+            <li className="card-item" key={index}>
+              <div className="card">
+                <div className="card-content">
+                <h4>Exercise {index + 1}</h4>
                 <Field
-                name={`${exercise}.reps`}
-                type="number"
-                component={Input}
-                label="Reps"
+                  name={`${exercise}.name`}
+                  type="text"
+                  component={Input}
+                  label="Name"
                 />
                 <Field
-                name={`${exercise}.weight`}
-                type="number"
-                component={Input}
-                label="Weight (lbs)"
+                  name={`${exercise}.sets`}
+                  type="number"
+                  component={Input}
+                  label="Sets"
                 />
-                <div className="row">
-                    <button
-                    className="submit-button col-4"
-                    type="button"
-                    title="Remove Exercise"
-                    onClick={() => fields.remove(index)}>
-                        Remove Exercise
-                    </button>
+                  <Field
+                  name={`${exercise}.reps`}
+                  type="number"
+                  component={Input}
+                  label="Reps"
+                  />
+                  <Field
+                  name={`${exercise}.weight`}
+                  type="number"
+                  component={Input}
+                  label="Weight (lbs)"
+                  />
+                  <div className="row">
+                      <button
+                      className="submit-button col-4"
+                      type="button"
+                      title="Remove Exercise"
+                      onClick={() => fields.remove(index)}>
+                          Remove Exercise
+                      </button>
+                  </div>
                 </div>
+              </div>
             </li>
         );
 
         const renderExercises = ({ fields }) => (
-          <ul>
-              {fields.map(renderExerciseFields)}
-              <div className="row">
-                <button className="submit-button col-4" type="button" onClick={() => fields.push({})}>Add Exercise</button>
-              </div>
-
-          </ul>
+          <div className="">
+            <ul className="row">
+                {fields.map(renderExerciseFields)}
+                <div className="button-container">
+                  <button className="button add-button" type="button" onClick={() => fields.push({})}>Add Exercise</button>
+                </div>
+            </ul>
+          </div>
         );
 
         return (
             <form
-                className="workout-form row"
+                className="edit-workout-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+              <div className="edit-header">
+                <h2>Edit your workout</h2>
                 <Field
                     component={Input}
                     type="text"
@@ -93,8 +98,9 @@ export class EditWorkoutForm extends React.Component {
                     name="date"
                     label="Workout Date"
                 />
+              </div>
                 <FieldArray name="exercises" component={renderExercises}/>
-                <div className="row">
+                <div className="edit-button">
                     <button
                         className="submit-button col-6"
                         type="submit">

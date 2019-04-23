@@ -23,23 +23,23 @@ header nav ul {
     justify-content: flex-end;
 }
 
-
 header nav a{
 	text-decoration: none;
 	background: transparent;
 	padding: 6px 10px;
 	transition: 0.5s;
+	color: black;
 }
 
 header nav a:hover{
 	color:#fff;
 	cursor: pointer;
-	background: #171717;
-	transition: 0.2s;
+	background: #2AABE4;
+	border-radius: 10px;
 }
 
 li.current:hover{
-	border-bottom: 0px;
+	border-bottom: 0;
 }
 
 h2 {
@@ -55,13 +55,24 @@ h2 {
     margin: 0 auto;
 }
 
+.logo {
+	width: auto;
+	height: 50px;
+	display: block;
+	margin-right: 8px;
+}
 
+.company {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+}
 
 .front-page > .container {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     max-width: 50%;
+	color: white;
 }
 
 #title {

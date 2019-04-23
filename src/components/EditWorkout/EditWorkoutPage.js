@@ -11,12 +11,13 @@ export class EditWorkoutPage extends React.Component {
 
     if (this.props.loggedIn) {
         return (
-        <div className="edit-workout">
-            <div className="edit-workout-container row page">
-                <h2>Edit Your Workout</h2>
-                <EditWorkoutForm />
+          <div className="container">
+            <div className="edit-page">
+                <div className="form-edit">
+                    <EditWorkoutForm />
+                </div>
             </div>
-        </div>
+          </div>
         );
     }
     else {

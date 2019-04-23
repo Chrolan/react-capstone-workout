@@ -21,61 +21,67 @@ export class CreateWorkoutForm extends React.Component {
 
     render() {
         const renderExerciseFields = (exercise, index, fields) => (
-            <li key={index}>
-                <div>
-                  <h3>Exercise #{index + 1}</h3>
-                </div>
-              <Field
-                name={`${exercise}.name`}
-                type="text"
-                component={Input}
-                label="Name"
-              />
-              <Field
-                name={`${exercise}.sets`}
-                type="number"
-                component={Input}
-                label="Sets"
-              />
-                <Field
-                name={`${exercise}.reps`}
-                type="number"
-                component={Input}
-                label="Reps"
-                />
-                <Field
-                name={`${exercise}.weight`}
-                type="number"
-                component={Input}
-                label="Weight (lbs)"
-                />
-                <div className="row">
-                    <button
-                    className=""
-                    type="button"
-                    title="Remove Exercise"
-                    onClick={() => fields.remove(index)}>
-                        Remove Exercise
-                    </button>
+            <li className="card-item" key={index}>
+                <div className="card">
+                  <div className="card-content">
+                  <h4>Exercise {index + 1}</h4>
+                  <Field
+                    name={`${exercise}.name`}
+                    type="text"
+                    component={Input}
+                    label="Name"
+                  />
+                  <Field
+                    name={`${exercise}.sets`}
+                    type="number"
+                    component={Input}
+                    label="Sets"
+                  />
+                    <Field
+                    name={`${exercise}.reps`}
+                    type="number"
+                    component={Input}
+                    label="Reps"
+                    />
+                    <Field
+                    name={`${exercise}.weight`}
+                    type="number"
+                    component={Input}
+                    label="Weight (lbs)"
+                    />
+                    <div className="">
+                        <button
+                        className="remove-button"
+                        type="button"
+                        title="Remove Exercise"
+                        onClick={() => fields.remove(index)}>
+                            Remove Exercise
+                        </button>
+                    </div>
+                  </div>
                 </div>
             </li>
         );
 
         const renderExercises = ({ fields }) => (
-          <ul>
-              {fields.map(renderExerciseFields)}
-              <div className="row">
-                <button className="" type="button" onClick={() => fields.push({})}>Add Exercise</button>
-              </div>
-          </ul>
+          <div className="">
+            <ul class="row">
+                {fields.map(renderExerciseFields)}
+                <div className="button-container">
+                  <button className="button add-button" type="button" onClick={() => fields.push({})}>Add Exercise</button>
+                </div>
+            </ul>
+          </div>
         );
 
         return (
             <form
-                className="edit-workout-form row"
+                className="create-workout-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
+              <div className="create-header">
+                <h2>Create Your Workout</h2>
                 <Field
                     component={Input}
                     type="text"
@@ -90,13 +96,14 @@ export class CreateWorkoutForm extends React.Component {
                     label="Workout Date"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
+              </div>
                 <FieldArray name="exercises" component={renderExercises}/>
-                <div className="row">
+                <div className="create-button">
                     <button
-                        className="submit-button col-6"
+                        className="submit-button"
                         type="submit"
                         disabled={this.props.pristine || this.props.submitting}>
-                        Create!
+                        Save Workout
                     </button>
                 </div>
             </form>

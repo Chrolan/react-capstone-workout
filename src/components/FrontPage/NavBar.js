@@ -36,10 +36,12 @@ export class NavBar extends React.Component {
         return (
           <header>
               <div className="header">
-                <div className="">
-                    <h1>Workout Tracker</h1>
-                </div>
-
+                  <div>
+                      <a href="/"><img className="logo" alt="" src="https://www.shareicon.net/data/128x128/2016/09/27/836589_weight_512x512.png"/></a>
+                  </div>
+                    <div className="company">
+                        <h1>Workout Tracker</h1>
+                    </div>
                 <nav className="">
                     <ul className="">
                         {myDashboardButton}

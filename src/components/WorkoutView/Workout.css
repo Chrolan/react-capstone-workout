@@ -2,9 +2,80 @@
     margin: 10px 5px 10px 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     padding: 10px;
+    background-color: #FFFFFF;
+}
+
+button {
+  text-transform: uppercase;
+  outline: 0;
+  background: rgba(187, 187, 187, 0.6);
+  margin: 3px 0 3px 0;
+  width: 100%;
+  padding: 15px;
+  color: #000000;
+  font-size: 14px;
+  border: 1px solid #000000;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.buttons {
+    margin-top: auto;
+}
+
+.edit-button:focus, .edit-button:hover {
+    background: #43A047;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.delete-button:focus, .delete-button:hover {
+    background: rgba(255, 0, 0, 0.76);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-item {
+    display: flex;
+    padding: .4rem;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: .75rem;
+}
+
+.card-content .workout-name, .card-content p {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .exercises ul{
     text-decoration: none;
     list-style: none;
+}
+
+.exercises h4 {
+    margin-top: 5px;
+}
+
+.exercise-container {
+    margin-bottom: 10px;
 }
