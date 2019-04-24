@@ -26,7 +26,7 @@ export class ConfirmationEditWorkoutPage extends React.Component {
         return (
           <div class="confirm-page">
             <div className="form edit">
-                <h3>Confirm you want to Edit Workout</h3>
+                <h3>Confirm: Edit Workout</h3>
                 <button className="confirm-button" onClick={()=> {this.editConfirmation()}}>Confirm</button>
                 <button className="cancel-button" onClick={()=> {this.cancelEdit()}}>Cancel</button>
             </div>

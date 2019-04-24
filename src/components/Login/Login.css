@@ -10,7 +10,7 @@
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
+  padding: 10px 25px 25px 25px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -62,4 +62,10 @@
 .login-page p a {
   color: #15af13;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 650px) {
+	.login-page {
+      max-width: 280px;
+    }
 }

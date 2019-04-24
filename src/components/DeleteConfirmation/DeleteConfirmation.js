@@ -30,7 +30,7 @@ export class DeleteConfirmationWorkoutPage extends React.Component {
         return (
         <div className="confirm-page">
             <div className="form confirm">
-                <h3>Confirm you want to Delete Workout</h3>
+                <h3>Confirm: Delete Workout</h3>
                 <button className="confirm-button" onClick={()=> {this.deleteWorkout()}}>Confirm</button>
                 <button className="cancel-button" onClick={()=> {this.cancelDelete()}}>Cancel</button>
             </div>

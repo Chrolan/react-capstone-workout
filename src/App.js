@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {Switch, Route, withRouter} from 'react-router-dom';
 import './App.css';
-import NavBar from './components/FrontPage/NavBar';
+import Header from './components/FrontPage/Header';
 import FrontPage from './components/FrontPage/FrontPage';
 import RegistrationPage from './components/Registration/RegistrationPage';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -12,6 +12,7 @@ import EditWorkoutPage from "./components/EditWorkout/EditWorkoutPage";
 import ConfirmationEditWorkoutPage from "./components/EditWorkout/EditConfirmation";
 import DeleteConfirmationWorkoutPage from "./components/DeleteConfirmation/DeleteConfirmation";
 import LoginPage from "./components/Login/LoginPage"
+import NavBar from "./components/FrontPage/Sidebar"
 
 class App extends Component {
 
@@ -43,8 +44,9 @@ class App extends Component {
 
   render() {
     return (
-        <div className="wrapper">
-            <NavBar/>
+        <div id="app" className="wrapper">
+            <Header/>
+            <NavBar pageWrapId={"page-wrap"} outerContainerId={"App"}/>
             <Switch>
             <Route exact path="/" component={FrontPage} />
             <Route exact path="/login" component={LoginPage}/>

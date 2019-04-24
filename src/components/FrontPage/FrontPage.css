@@ -51,9 +51,10 @@ h2 {
     display: flex;
     flex-direction: row;
     align-items: center;
-	width: 70%;
     margin: 0 auto;
+	padding-left: 25px
 }
+
 
 .logo {
 	width: auto;
@@ -90,4 +91,94 @@ h2 {
     font-weight: 800;
 	font-size: 45px;
     text-shadow: 3px 3px 5px rgba(0,0,0, 0.5);
+}
+
+@media only screen and (max-width: 650px) {
+	nav ul {
+		display: block;
+	}
+	.header {
+		font-size: .7em;
+		padding: 5px 0 0 15px;
+	}
+	.logo {
+		width: 42px;
+		height: 42px;
+	}
+
+	.bm-burger-button {
+	  position: absolute;
+	  width: 36px;
+	  height: 30px;
+	  right: 25px;
+	  top: 18px;
+	}
+	.front-page > .container {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		max-width: 75%;
+		color: white;
+}
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+  transition: color 0.2s;
+  padding: 4px;
+}
+
+/* Change color on hover */
+.bm-item:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 22px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #1a7eeb;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }

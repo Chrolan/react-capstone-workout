@@ -8,9 +8,8 @@
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
   margin: 0 auto 100px;
-  padding: 25px;
+  padding: 10px 25px 25px 25px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -64,6 +63,10 @@
   text-decoration: none;
 }
 
+.register-page .form h2{
+  margin-bottom: 15px;
+}
+
 label {
     font-weight: 400;
     padding-bottom: 6px;
@@ -72,4 +75,10 @@ label {
 .form-error {
     font-weight: 700;
     margin-bottom: 3px;
+}
+
+@media only screen and (max-width: 650px) {
+	.register-page {
+      max-width: 280px;
+    }
 }
