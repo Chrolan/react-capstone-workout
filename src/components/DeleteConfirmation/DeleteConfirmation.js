@@ -28,13 +28,16 @@ export class DeleteConfirmationWorkoutPage extends React.Component {
 
     if (this.props.loggedIn) {
         return (
-        <div className="edit-workout row">
-            <h3>Confirm you want to Delete Workout</h3>
-            <button className="submit-button col-6" onClick={()=> {this.deleteWorkout()}}>Confirm</button>
-            <button className="submit-button col-6" onClick={()=> {this.cancelDelete()}}>Cancel</button>
+        <div className="confirm-page">
+            <div className="form confirm">
+                <h3>Confirm you want to Delete Workout</h3>
+                <button className="confirm-button" onClick={()=> {this.deleteWorkout()}}>Confirm</button>
+                <button className="cancel-button" onClick={()=> {this.cancelDelete()}}>Cancel</button>
+            </div>
         </div>
         );
     }
+
     else {
         return <Redirect to="/" />;
     }}

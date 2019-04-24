@@ -12,7 +12,7 @@ export function FrontPage(props) {
     return (
         <div className="front-page">
             <div id="title">
-                <p>Push yourself to the limit</p>
+                <p>PUSH YOURSELF</p>
             </div>
             <div className="container">
                 <h1>Your personalized workout app</h1>
