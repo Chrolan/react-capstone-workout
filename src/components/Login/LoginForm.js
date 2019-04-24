@@ -47,6 +47,7 @@ export class LoginForm extends React.Component {
                     Log in
                 </button>
                 <p className="message">If you do not have an account, please <Link to="/register">Register</Link></p>
+                <p className="message">Demo account: demo , Demo password: demo123456</p>
             </form>
         );
     }
